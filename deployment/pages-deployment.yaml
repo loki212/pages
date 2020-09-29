@@ -1,23 +1,33 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata:
-  labels:
+metadata: 
+  labels: 
     app: pages
   name: pages
   namespace: beta
-spec:
+spec: 
   replicas: 1
-  selector:
-    matchLabels:
+  selector: 
+    matchLabels: 
       app: pages
   strategy: {}
-  template:
-    metadata:
-      labels:
+  template: 
+    metadata: 
+      labels: 
         app: pages
-    spec:
-      containers:
-      - image: loki212/pages:1.0
-        name: pages
-        ports:
-          - containerPort: 8080
+    spec: 
+      containers: 
+        - 
+          env: 
+            - 
+              name: PAGE_CONTENT
+              valueFrom: 
+                configMapKeyRef: 
+                  key: PAGE_CONTENT
+                  name: pages-config-map
+          image: "loki212/pages:1.2"
+          name: pages
+          ports: 
+            - 
+              containerPort: 8080
+
