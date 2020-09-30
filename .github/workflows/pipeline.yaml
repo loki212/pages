@@ -1,8 +1,7 @@
 name: Pages Pipeline
-
 on:
   push:
-    branches: [master]
+    branches: [db]
 
 jobs:
   build-artifact:
