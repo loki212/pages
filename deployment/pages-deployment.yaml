@@ -25,7 +25,7 @@ spec:
                 configMapKeyRef: 
                   key: PAGE_CONTENT
                   name: pages-config-map
-          image: "loki212/pages:1.2"
+          image: "loki212/pages:pipeline"
           name: pages
           ports: 
             - 
