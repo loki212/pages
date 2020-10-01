@@ -20,7 +20,7 @@ spec:
         tier: service
     spec:
       containers:
-        - image: loki212/pages:scaling
+        - image: loki212/pages:distributed
           name: pages
           ports:
             - containerPort: 8080
